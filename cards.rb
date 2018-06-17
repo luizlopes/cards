@@ -1,3 +1,7 @@
+def print_boas_vindas
+  puts 'Bem vindo ao Cards System'
+end
+
 def print_menu
   puts "Digite a opção desejada"
   puts "[1] Inserir um novo card"
@@ -12,7 +16,7 @@ def get_opcao
   gets.to_i
 end
 
-puts 'Bem vindo ao Cards System'
+print_boas_vindas()
 print_menu()
 opcao = get_opcao()
 
