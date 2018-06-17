@@ -22,8 +22,8 @@ while opcao != 4
     portugues = gets.chomp
     puts 'Insira uma expressão em Ingles:'
     ingles = gets.chomp
-    card = "Portugues: " + portugues + " -> Ingles: " + ingles
-    puts "Você inseriu o card: " + card
+    card = "Portugues: #{portugues} -> Ingles: #{ingles}"
+    puts "Você inseriu o card: #{card}"
     puts
   elsif opcao == 2
     #TODO
