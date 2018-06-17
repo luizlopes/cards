@@ -7,11 +7,14 @@ def print_menu
   puts
 end
 
+def get_opcao
+  print 'Escolha uma opção: '
+  gets.to_i
+end
+
 puts 'Bem vindo ao Cards System'
 print_menu()
-
-print 'Escolha uma opção: '
-opcao = gets.to_i
+opcao = get_opcao()
 
 while opcao != 4
   if opcao == 1
@@ -33,6 +36,5 @@ while opcao != 4
     puts
   end
   print_menu()
-  print 'Escolha uma opção: '
-  opcao = gets.to_i
+  opcao = get_opcao()
 end
