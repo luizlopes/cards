@@ -1,11 +1,15 @@
-puts 'Bem vindo ao Cards System'
+def print_menu
+  puts "Digite a opção desejada"
+  puts "[1] Inserir um novo card"
+  puts "[2] Exibir todos os cards"
+  puts "[3] Buscar um card"
+  puts "[4] Sair"
+  puts
+end
 
-puts "Digite a opção desejada"
-puts "[1] Inserir um novo card"
-puts "[2] Exibir todos os cards"
-puts "[3] Buscar um card"
-puts "[4] Sair"
-puts
+puts 'Bem vindo ao Cards System'
+print_menu()
+
 print 'Escolha uma opção: '
 opcao = gets.to_i
 
@@ -28,12 +32,7 @@ while opcao != 4
     puts 'entre com uma opcao válida'
     puts
   end
-  puts "Digite a opção desejada"
-  puts "[1] Inserir um novo card"
-  puts "[2] Exibir todos os cards"
-  puts "[3] Buscar um card"
-  puts "[4] Sair"
-  puts
+  print_menu()
   print 'Escolha uma opção: '
   opcao = gets.to_i
 end
