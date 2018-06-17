@@ -35,13 +35,16 @@ print_boas_vindas()
 print_menu()
 opcao = get_opcao()
 
+cards = {}
+
 while opcao != OPCAO_SAIR
   if opcao == OPCAO_INSERIR_CARD
     puts 'Insira uma expressão em Português:'
     portugues = gets.chomp
     puts 'Insira uma expressão em Ingles:'
     ingles = gets.chomp
-    card = "Portugues: #{portugues} -> Ingles: #{ingles}"
+    cards[portugues] = ingles
+    card = "Portugues: #{portugues} -> Ingles: #{cards[portugues]}"
     puts "Você inseriu o card: #{card}"
     puts
   elsif opcao == OPCAO_EXIBIR_TODOS
