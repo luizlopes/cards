@@ -48,7 +48,8 @@ while opcao != OPCAO_SAIR
     puts "Você inseriu o card: #{card}"
     puts
   elsif opcao == OPCAO_EXIBIR_TODOS
-    #TODO
+    cards.each { |portugues, ingles| puts "Portugues: #{portugues} -> Ingles: #{ingles}" }
+    puts
   elsif opcao == OPCAO_BUSCAR_CARD
     #TODO
   else
