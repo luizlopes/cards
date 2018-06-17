@@ -1,3 +1,8 @@
+OPCAO_INSERIR_CARD = 1
+OPCAO_EXIBIR_TODOS = 2
+OPCAO_BUSCAR_CARD = 3
+OPCAO_SAIR = 4
+
 def print_boas_vindas
   puts 'Bem vindo ao Cards System'
 end
@@ -30,8 +35,8 @@ print_boas_vindas()
 print_menu()
 opcao = get_opcao()
 
-while opcao != 4
-  if opcao == 1
+while opcao != OPCAO_SAIR
+  if opcao == OPCAO_INSERIR_CARD
     puts 'Insira uma expressão em Português:'
     portugues = gets.chomp
     puts 'Insira uma expressão em Ingles:'
@@ -39,9 +44,9 @@ while opcao != 4
     card = "Portugues: #{portugues} -> Ingles: #{ingles}"
     puts "Você inseriu o card: #{card}"
     puts
-  elsif opcao == 2
+  elsif opcao == OPCAO_EXIBIR_TODOS
     #TODO
-  elsif opcao == 3
+  elsif opcao == OPCAO_BUSCAR_CARD
     #TODO
   else
     print_opcao_invalida()
