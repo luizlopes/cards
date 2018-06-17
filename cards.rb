@@ -2,6 +2,11 @@ def print_boas_vindas
   puts 'Bem vindo ao Cards System'
 end
 
+def print_despedida
+  puts
+  puts 'Obrigado por utilizar o Cards System'
+end
+
 def print_menu
   puts "Digite a opção desejada"
   puts "[1] Inserir um novo card"
@@ -33,8 +38,6 @@ while opcao != 4
     #TODO
   elsif opcao == 3
     #TODO
-  elsif opcao == 4
-    puts 'Obrigado por utilizar o Cards System'
   else
     puts 'entre com uma opcao válida'
     puts
@@ -42,3 +45,4 @@ while opcao != 4
   print_menu()
   opcao = get_opcao()
 end
+print_despedida()
