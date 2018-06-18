@@ -54,8 +54,14 @@ def print_card_nao_encontrado(card)
   puts "Card #{card} não encontrado"
 end
 
-def busca_card(texto)
-  nil
+def busca_card(cards, texto)
+  card = nil
+  cards.each do |c|
+    if c[:portugues].casecmp(texto) || c[:ingles].casecmp(texto) 
+      card = c
+    end
+  end
+  card
 end
 
 print_boas_vindas()
@@ -78,7 +84,7 @@ while opcao != OPCAO_SAIR
     puts
   elsif opcao == OPCAO_BUSCAR_CARD
     texto = gets_texto_busca()
-    card_encontrado = busca_card(texto)
+    card_encontrado = busca_card(cards, texto)
     if card_encontrado
       print_card(card_encontrado)
     else
