@@ -55,13 +55,7 @@ def print_card_nao_encontrado(card)
 end
 
 def busca_card(cards, texto)
-  card = nil
-  cards.each do |c|
-    if c[:portugues].casecmp(texto) || c[:ingles].casecmp(texto) 
-      card = c
-    end
-  end
-  card
+  cards.find { |c| c[:portugues].upcase == texto.upcase || c[:ingles].upcase == texto.upcase }
 end
 
 print_boas_vindas()
