@@ -65,6 +65,13 @@ def criar_card
   card
 end
 
+def salvar_card(cards, card)
+  cards << card
+  puts "Você inseriu o card: "
+  print_card(card)
+  puts
+end
+
 print_boas_vindas()
 print_menu()
 opcao = gets_opcao()
@@ -74,10 +81,7 @@ cards = []
 while opcao != OPCAO_SAIR
   if opcao == OPCAO_INSERIR_CARD
     card = criar_card()
-    cards << card
-    puts "Você inseriu o card: "
-    print_card(card)
-    puts
+    salvar_card(cards, card)
   elsif opcao == OPCAO_EXIBIR_TODOS
     cards.each { |card| print_card(card) }
     puts
