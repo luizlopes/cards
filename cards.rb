@@ -77,6 +77,16 @@ def imprimir_todos(cards)
   puts
 end
 
+def busca(cards)
+  texto = gets_texto_busca()
+  card_encontrado = busca_card(cards, texto)
+  if card_encontrado
+    print_card(card_encontrado)
+  else
+    print_card_nao_encontrado(texto)
+  end
+end
+
 print_boas_vindas()
 print_menu()
 opcao = gets_opcao()
@@ -90,13 +100,7 @@ while opcao != OPCAO_SAIR
   elsif opcao == OPCAO_EXIBIR_TODOS
     imprimir_todos(cards)
   elsif opcao == OPCAO_BUSCAR_CARD
-    texto = gets_texto_busca()
-    card_encontrado = busca_card(cards, texto)
-    if card_encontrado
-      print_card(card_encontrado)
-    else
-      print_card_nao_encontrado(texto)
-    end
+    busca(cards)
   else
     print_opcao_invalida()
   end
