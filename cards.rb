@@ -72,6 +72,11 @@ def salvar_card(cards, card)
   puts
 end
 
+def imprimir_todos(cards)
+  cards.each { |card| print_card(card) }
+  puts
+end
+
 print_boas_vindas()
 print_menu()
 opcao = gets_opcao()
@@ -83,8 +88,7 @@ while opcao != OPCAO_SAIR
     card = criar_card()
     salvar_card(cards, card)
   elsif opcao == OPCAO_EXIBIR_TODOS
-    cards.each { |card| print_card(card) }
-    puts
+    imprimir_todos(cards)
   elsif opcao == OPCAO_BUSCAR_CARD
     texto = gets_texto_busca()
     card_encontrado = busca_card(cards, texto)
