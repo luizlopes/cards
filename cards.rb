@@ -58,15 +58,16 @@ print_boas_vindas()
 print_menu()
 opcao = gets_opcao()
 
-cards = {}
+cards = []
 
 while opcao != OPCAO_SAIR
   if opcao == OPCAO_INSERIR_CARD
     portugues = gets_portugues()  
     ingles = gets_ingles()
-    cards[portugues] = ingles
+    card = {portugues: portugues, ingles: ingles} 
+    cards << card
     puts "Você inseriu o card: "
-    print_card(portugues, ingles)
+    print_card(card[:portugues], card[:ingles])
     puts
   elsif opcao == OPCAO_EXIBIR_TODOS
     cards.each { |portugues, ingles| print_card(portugues, ingles) }
