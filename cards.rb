@@ -35,6 +35,10 @@ def print_card(portugues, ingles)
   puts "Portugues: #{portugues} -> Ingles: #{ingles}"
 end
 
+def print_card_nao_encontrado(card)
+  puts "Card #{card} não encontrado"
+end
+
 print_boas_vindas()
 print_menu()
 opcao = get_opcao()
@@ -55,7 +59,20 @@ while opcao != OPCAO_SAIR
     cards.each { |portugues, ingles| print_card(portugues, ingles) }
     puts
   elsif opcao == OPCAO_BUSCAR_CARD
-    #TODO
+    puts "Digite o texto a ser buscado:"
+    texto = gets.chomp
+    existe_texto = cards.keys.include? texto
+    if existe_texto
+      print_card texto, cards[texto]
+    else
+      existe_texto = cards.values.include? texto
+      if (existe_texto)
+        print_card cards.key(texto), texto
+      else
+        print_card_nao_encontrado(texto)
+      end
+    end
+
   else
     print_opcao_invalida()
   end
