@@ -26,7 +26,7 @@ def print_menu
   puts
 end
 
-def get_opcao
+def gets_opcao
   print 'Escolha uma opção: '
   gets.to_i
 end
@@ -72,7 +72,6 @@ while opcao != OPCAO_SAIR
         print_card_nao_encontrado(texto)
       end
     end
-
   else
     print_opcao_invalida()
   end
