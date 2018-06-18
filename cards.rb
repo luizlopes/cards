@@ -31,6 +31,10 @@ def get_opcao
   gets.to_i
 end
 
+def print_card(portugues, ingles)
+  puts "Portugues: #{portugues} -> Ingles: #{ingles}"
+end
+
 print_boas_vindas()
 print_menu()
 opcao = get_opcao()
@@ -44,11 +48,11 @@ while opcao != OPCAO_SAIR
     puts 'Insira uma expressão em Ingles:'
     ingles = gets.chomp
     cards[portugues] = ingles
-    card = "Portugues: #{portugues} -> Ingles: #{cards[portugues]}"
-    puts "Você inseriu o card: #{card}"
+    puts "Você inseriu o card: "
+    print_card(portugues, ingles)
     puts
   elsif opcao == OPCAO_EXIBIR_TODOS
-    cards.each { |portugues, ingles| puts "Portugues: #{portugues} -> Ingles: #{ingles}" }
+    cards.each { |portugues, ingles| print_card(portugues, ingles) }
     puts
   elsif opcao == OPCAO_BUSCAR_CARD
     #TODO
