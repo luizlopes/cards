@@ -54,6 +54,10 @@ def print_card_nao_encontrado(card)
   puts "Card #{card} não encontrado"
 end
 
+def busca_card(texto)
+  nil
+end
+
 print_boas_vindas()
 print_menu()
 opcao = gets_opcao()
@@ -74,16 +78,11 @@ while opcao != OPCAO_SAIR
     puts
   elsif opcao == OPCAO_BUSCAR_CARD
     texto = gets_texto_busca()
-    existe_texto = cards.keys.include? texto
-    if existe_texto
-      #print_card texto, cards[texto]
+    card_encontrado = busca_card(texto)
+    if card_encontrado
+      print_card(card_encontrado)
     else
-      existe_texto = cards.values.include? texto
-      if (existe_texto)
-        #print_card cards.key(texto), texto
-      else
-        print_card_nao_encontrado(texto)
-      end
+      print_card_nao_encontrado(texto)
     end
   else
     print_opcao_invalida()
