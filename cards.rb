@@ -36,6 +36,11 @@ def gets_portugues
   gets.chomp
 end
 
+def gets_ingles
+  puts 'Insira uma expressão em Ingles: '
+  gets.chomp
+end
+
 def print_card(portugues, ingles)
   puts "Portugues: #{portugues} -> Ingles: #{ingles}"
 end
@@ -52,9 +57,8 @@ cards = {}
 
 while opcao != OPCAO_SAIR
   if opcao == OPCAO_INSERIR_CARD
-    portugues = gets_portugues()
-    puts 'Insira uma expressão em Ingles:'
-    ingles = gets.chomp
+    portugues = gets_portugues()  
+    ingles = gets_ingles()
     cards[portugues] = ingles
     puts "Você inseriu o card: "
     print_card(portugues, ingles)
