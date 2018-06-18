@@ -46,8 +46,8 @@ def gets_texto_busca
   gets.chomp
 end
 
-def print_card(portugues, ingles)
-  puts "Portugues: #{portugues} -> Ingles: #{ingles}"
+def print_card(card)
+  puts "Portugues: #{card[:portugues]} -> Ingles: #{card[:ingles]}"
 end
 
 def print_card_nao_encontrado(card)
@@ -67,20 +67,20 @@ while opcao != OPCAO_SAIR
     card = {portugues: portugues, ingles: ingles} 
     cards << card
     puts "Você inseriu o card: "
-    print_card(card[:portugues], card[:ingles])
+    print_card(card)
     puts
   elsif opcao == OPCAO_EXIBIR_TODOS
-    cards.each { |portugues, ingles| print_card(portugues, ingles) }
+    cards.each { |card| print_card(card) }
     puts
   elsif opcao == OPCAO_BUSCAR_CARD
     texto = gets_texto_busca()
     existe_texto = cards.keys.include? texto
     if existe_texto
-      print_card texto, cards[texto]
+      #print_card texto, cards[texto]
     else
       existe_texto = cards.values.include? texto
       if (existe_texto)
-        print_card cards.key(texto), texto
+        #print_card cards.key(texto), texto
       else
         print_card_nao_encontrado(texto)
       end
