@@ -31,6 +31,11 @@ def gets_opcao
   gets.to_i
 end
 
+def gets_portugues
+  puts 'Insira uma expressão em Português: '
+  gets.chomp
+end
+
 def print_card(portugues, ingles)
   puts "Portugues: #{portugues} -> Ingles: #{ingles}"
 end
@@ -41,14 +46,13 @@ end
 
 print_boas_vindas()
 print_menu()
-opcao = get_opcao()
+opcao = gets_opcao()
 
 cards = {}
 
 while opcao != OPCAO_SAIR
   if opcao == OPCAO_INSERIR_CARD
-    puts 'Insira uma expressão em Português:'
-    portugues = gets.chomp
+    portugues = gets_portugues()
     puts 'Insira uma expressão em Ingles:'
     ingles = gets.chomp
     cards[portugues] = ingles
@@ -76,6 +80,6 @@ while opcao != OPCAO_SAIR
     print_opcao_invalida()
   end
   print_menu()
-  opcao = get_opcao()
+  opcao = gets_opcao()
 end
 print_despedida()
