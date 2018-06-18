@@ -58,6 +58,13 @@ def busca_card(cards, texto)
   cards.find { |c| c[:portugues].upcase == texto.upcase || c[:ingles].upcase == texto.upcase }
 end
 
+def criar_card
+  portugues = gets_portugues()  
+  ingles = gets_ingles()
+  card = {portugues: portugues, ingles: ingles} 
+  card
+end
+
 print_boas_vindas()
 print_menu()
 opcao = gets_opcao()
@@ -66,9 +73,7 @@ cards = []
 
 while opcao != OPCAO_SAIR
   if opcao == OPCAO_INSERIR_CARD
-    portugues = gets_portugues()  
-    ingles = gets_ingles()
-    card = {portugues: portugues, ingles: ingles} 
+    card = criar_card()
     cards << card
     puts "Você inseriu o card: "
     print_card(card)
