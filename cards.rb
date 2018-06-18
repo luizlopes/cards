@@ -41,6 +41,11 @@ def gets_ingles
   gets.chomp
 end
 
+def gets_texto_busca
+  puts 'Digite o texto a ser buscado: '
+  gets.chomp
+end
+
 def print_card(portugues, ingles)
   puts "Portugues: #{portugues} -> Ingles: #{ingles}"
 end
@@ -67,8 +72,7 @@ while opcao != OPCAO_SAIR
     cards.each { |portugues, ingles| print_card(portugues, ingles) }
     puts
   elsif opcao == OPCAO_BUSCAR_CARD
-    puts "Digite o texto a ser buscado:"
-    texto = gets.chomp
+    texto = gets_texto_busca()
     existe_texto = cards.keys.include? texto
     if existe_texto
       print_card texto, cards[texto]
