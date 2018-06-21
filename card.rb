@@ -7,4 +7,8 @@ class Card
     @ingles = ingles
   end
 
+  def to_s
+    "Portugues: #{@portugues} -> Ingles: #{@ingles}"
+  end
+
 end

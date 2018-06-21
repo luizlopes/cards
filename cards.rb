@@ -1,3 +1,5 @@
+require_relative 'card' 
+
 OPCAO_INSERIR_CARD = 1
 OPCAO_EXIBIR_TODOS = 2
 OPCAO_BUSCAR_CARD = 3
@@ -47,7 +49,7 @@ def gets_texto_busca
 end
 
 def print_card(card)
-  puts "Portugues: #{card[:portugues]} -> Ingles: #{card[:ingles]}"
+  puts card
 end
 
 def print_card_nao_encontrado(card)
@@ -61,8 +63,7 @@ end
 def criar_card
   portugues = gets_portugues()  
   ingles = gets_ingles()
-  card = {portugues: portugues, ingles: ingles} 
-  card
+  Card.new portugues, ingles
 end
 
 def salvar_card(cards, card)
