@@ -57,7 +57,7 @@ def print_card_nao_encontrado(card)
 end
 
 def busca_card(cards, texto)
-  cards.find { |c| c[:portugues].upcase == texto.upcase || c[:ingles].upcase == texto.upcase }
+  cards.find { |c| c.portugues.upcase == texto.upcase || c.ingles.upcase == texto.upcase }
 end
 
 def criar_card
