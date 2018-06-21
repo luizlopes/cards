@@ -67,9 +67,14 @@ def criar_card
 end
 
 def salvar_card(cards, card)
-  cards << card
-  puts "Você inseriu o card: "
-  print_card(card)
+  card_existe = cards.include? card
+  if card_existe
+    puts "Card #{card} já existe"
+  else
+    cards << card
+    puts "Você inseriu o card: "
+    print_card(card)
+  end
   puts
 end
 
