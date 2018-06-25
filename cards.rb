@@ -21,10 +21,10 @@ end
 
 def print_menu
   puts "Digite a opção desejada"
-  puts "[1] Inserir um novo card"
-  puts "[2] Exibir todos os cards"
-  puts "[3] Buscar um card"
-  puts "[4] Sair"
+  puts "[#{OPCAO_INSERIR_CARD}] Inserir um novo card"
+  puts "[#{OPCAO_EXIBIR_TODOS}] Exibir todos os cards"
+  puts "[#{OPCAO_BUSCAR_CARD}] Buscar um card"
+  puts "[#{OPCAO_SAIR}] Sair"
   puts
 end
 
