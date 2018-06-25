@@ -8,4 +8,9 @@ class EmergencialCard < Card
     @emergency_phone = phone
   end
 
+  def to_s
+    s = super   # isso me parece feio, mas fiz assim para testar possibilidades
+    "#{s} \nTelefone de Emergencia: #{emergency_phone}"
+  end
+
 end
