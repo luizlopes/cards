@@ -1,9 +1,11 @@
-require_relative 'card' 
+require_relative 'card'
+require_relative 'emergencial_card'
 
 OPCAO_INSERIR_CARD = 1
-OPCAO_EXIBIR_TODOS = 2
-OPCAO_BUSCAR_CARD = 3
-OPCAO_SAIR = 4
+OPCAO_INSERIR_EMERG_CARD = 2
+OPCAO_EXIBIR_TODOS = 3
+OPCAO_BUSCAR_CARD = 4
+OPCAO_SAIR = 5
 
 def print_boas_vindas
   puts 'Bem vindo ao Cards System'
@@ -22,6 +24,7 @@ end
 def print_menu
   puts "Digite a opção desejada"
   puts "[#{OPCAO_INSERIR_CARD}] Inserir um novo card"
+  puts "[#{OPCAO_INSERIR_EMERG_CARD}] Inserir um novo emergencial card"
   puts "[#{OPCAO_EXIBIR_TODOS}] Exibir todos os cards"
   puts "[#{OPCAO_BUSCAR_CARD}] Buscar um card"
   puts "[#{OPCAO_SAIR}] Sair"
@@ -40,6 +43,11 @@ end
 
 def gets_ingles
   puts 'Insira uma expressão em Ingles: '
+  gets.chomp
+end
+
+def gets_emergency_phone()
+  puts 'Insira o telefone de emergencia:'
   gets.chomp
 end
 
@@ -64,6 +72,13 @@ def criar_card
   portugues = gets_portugues()  
   ingles = gets_ingles()
   Card.new portugues, ingles
+end
+
+def criar_emerg_card
+  portugues = gets_portugues()  
+  ingles = gets_ingles()
+  phone = gets_emergency_phone()
+  EmergencialCard.new portugues, ingles, phone
 end
 
 def salvar_card(cards, card)
@@ -102,6 +117,9 @@ cards = []
 while opcao != OPCAO_SAIR
   if opcao == OPCAO_INSERIR_CARD
     card = criar_card()
+    salvar_card(cards, card)
+  elsif opcao == OPCAO_INSERIR_EMERG_CARD
+    card = criar_emerg_card()
     salvar_card(cards, card)
   elsif opcao == OPCAO_EXIBIR_TODOS
     imprimir_todos(cards)
